@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+if (require.main === module) {
+    const repl = require("repl")
+    const app = require("../app")
+    app.__dict__.mixin(repl.start(":> ").context, { app })
+}
+
+process.on("uncaughtException", function (err) {
+    console.error(err) 
+})
+process.on("unhandledRejection", function (err) {
+    console.error(err)
+})

@@ -1,0 +1,17 @@
+base: &base
+    secrets_key: ''
+    db:
+        database:
+        username:
+        hostname:
+        port:
+    app_port:
+
+dev:
+    <<: *base
+
+development:
+    <<: *base
+
+production:
+    <<: *base
